@@ -6,8 +6,8 @@
 	let { children, data }: { children: import('svelte').Snippet; data: LayoutData } = $props();
 
 	const navItems = [
-		{ href: '/dashboard/products', label: 'Products', icon: '📦' },
-		{ href: '/dashboard/settings', label: 'Settings', icon: '⚙️' }
+		{ href: '/dashboard/products', label: 'Products' },
+		{ href: '/dashboard/settings', label: 'Settings' }
 	];
 </script>
 
@@ -23,7 +23,6 @@
 					class="nav-item"
 					class:active={$page.url.pathname.startsWith(item.href)}
 				>
-					<span class="nav-icon">{item.icon}</span>
 					{item.label}
 				</a>
 			{/each}

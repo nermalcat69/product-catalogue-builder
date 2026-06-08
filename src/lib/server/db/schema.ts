@@ -21,6 +21,8 @@ export const product = sqliteTable('product', {
 	logisticsDeliveryCost: real('logistics_delivery_cost').notNull().default(0),
 	markupPercentage: real('markup_percentage').notNull().default(0),
 	gstPercentage: real('gst_percentage').notNull().default(18),
+	chargeDeliveryToCustomer: integer('charge_delivery_to_customer', { mode: 'boolean' }).notNull().default(false),
+	chargeGstToCustomer: integer('charge_gst_to_customer', { mode: 'boolean' }).notNull().default(true),
 	createdAt: integer('created_at', { mode: 'timestamp' })
 		.notNull()
 		.$defaultFn(() => new Date())
